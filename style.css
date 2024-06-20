@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: url('img/Default_gambling_advertisment_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1 {
+    color: antiquewhite;
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 50px;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    z-index: 1;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: white;
+    position: relative;
+}
+
+.card.flipped {
+    background-color: #f1c40f;
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    background-color: #4caf50;
+    pointer-events: none;
+}
+
+.icon {
+    width: 80%;
+    height: 80%;
+}
+
+@media (max-width: 500px) {
+    #game-board {
+        max-width: 200px;
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: repeat(4, 50px);
+        gap: 5px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .card {
+        max-width: 50px;
+        max-height: 50px;
+        border: 1px solid #333;
+        font-size: 1em;
+    }
+
+    .icon {
+        width: 80%;
+        height: 80%;
+    }
+}
